@@ -1,0 +1,6 @@
+{
+  "name": "Task Assignment & Duty Management System",
+  "description": "A comprehensive system where administrators assign tasks to personnel, import duties via Excel, generate PDF/CSV reports, and receive AI-powered duty completion summaries and risk suggestions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User account profile details",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "department": { "type": "string" }
+      },
+      "required": ["uid", "name", "email", "role", "department"]
+    },
+    "Task": {
+      "title": "Task Assignment",
+      "description": "Duty assignment and tracking model",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "assignedTo": { "type": "string" },
+        "assignedToName": { "type": "string" },
+        "assignedBy": { "type": "string" },
+        "priority": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "dueTime": { "type": "string" },
+        "status": { "type": "string" },
+        "department": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "remarks": { "type": "string" }
+      },
+      "required": ["id", "title", "description", "assignedTo", "assignedToName", "assignedBy", "priority", "dueDate", "status", "department", "createdAt"]
+    },
+    "Notification": {
+      "title": "Notification Alert",
+      "description": "Real-time notification model",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sender": { "type": "string" },
+        "receiver": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "read": { "type": "boolean" },
+        "taskId": { "type": "string" }
+      },
+      "required": ["id", "sender", "receiver", "message", "type", "createdAt", "read"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Assigned duties and tracking"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Notifications and alerts feed"
+    }
+  }
+}
